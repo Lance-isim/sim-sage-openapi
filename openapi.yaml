@@ -11,12 +11,22 @@ paths:
       summary: Retrieve the Sim Sage KYRNL JSON
       operationId: getKyrnl
       responses:
-        "200":
-          description: A successful response
-          content:
-            application/json:
-              schema:
-                type: object
+  "200":
+    description: "KYRNL retrieved successfully"
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            version:
+              type: string
+            description:
+              type: string
+            components:
+              type: object
+
                 example:
                   status: success
                   message: "KYRNL retrieved"
