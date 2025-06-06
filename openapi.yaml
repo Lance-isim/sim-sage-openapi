@@ -1,28 +1,30 @@
-openapi: "3.1.0"
+openapi: 3.1.0
 info:
-  title: "Sim Sage KYRNL API"
-  version: "1.0.0"
-  description: "API to retrieve the Sim Sage KYRNL from a Supabase public bucket"
+  title: Sim Sage KYRNL API
+  version: 1.0.0
+  description: API to retrieve the Sim Sage KYRNL JSON object.
 servers:
-  - url: "https://grfheayxwxyseqqbjdwt.supabase.co/storage/v1/object/public/kin-archive"
+  - url: https://grfheayxwxyseqqbjdwt.supabase.co/storage/v1/object/public/kin-archive
 paths:
   /Sim_Sage_KYRNL_06052025183840.json:
     get:
-      operationId: "getKyrnl"
-      summary: "Retrieve KYRNL JSON"
+      summary: Retrieve Sim Sage KYRNL
+      operationId: getKyrnl
       responses:
-        "200":
-          description: "KYRNL retrieved successfully"
+        '200':
+          description: A JSON object containing the Sim Sage KYRNL.
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  name:
-                    type: string
                   version:
                     type: string
-                  description:
+                    example: 1.0.0
+                  core:
                     type: string
-                  components:
-                    type: object
+                    example: Sim Sage KYRNL core metadata...
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
