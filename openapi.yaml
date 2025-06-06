@@ -1,0 +1,23 @@
+openapi: 3.1.0
+info:
+  title: Sim Sage KYRNL Retrieval API
+  description: API to retrieve the Sim Sage KYRNL for prototype integration.
+  version: "1.0.0"
+servers:
+  - url: https://grfheayxwxyseqqbjdwt.supabase.co/storage/v1/object/public/kin-archive/
+paths:
+  /Sim_Sage_KYRNL_06052025183840.json:
+    get:
+      summary: Retrieve the Sim Sage KYRNL JSON
+      operationId: getKyrnl
+      responses:
+        "200":
+          description: A successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: success
+                  message: "KYRNL retrieved"
+                  data: { ... }
